@@ -141,9 +141,10 @@ This creates `report/boltzmann3d_numerical_report.pdf` locally.  The generated
 - The spectral and neural implementations use different numerical precision.
 - Wall-clock measurements will change with hardware and software versions.
 
-## License before public release
+## License
 
-No license has been selected in this export.  Before publishing the repository
-as open source, the authors should add an appropriate `LICENSE` file and
-confirm redistribution terms for the bundled fast-spectral and spherical-
-design components.
+Original software and associated materials authored for this project are
+released under the [MIT License](LICENSE), copyright 2026 Kunlun Qi and
+contributors.  Externally sourced numerical components retain their
+applicable original terms and attribution; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
