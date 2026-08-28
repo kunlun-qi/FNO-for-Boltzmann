@@ -1,4 +1,4 @@
-# 3D homogeneous Boltzmann equation with FNO and C-FNO
+# FNO and C-FNO for 3D homogeneous Boltzmann equation
 
 This repository-sized package reproduces the three-dimensional numerical
 experiment for the spatially homogeneous Boltzmann equation with cutoff
