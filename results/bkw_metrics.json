@@ -1,0 +1,169 @@
+{
+  "physical_time_initial": 5.5,
+  "time_convention": "K(t)=1-exp(-t/6)",
+  "time_horizon": 1.0,
+  "created_utc": "2026-08-28T19:02:05.348924+00:00",
+  "device": "cpu",
+  "benchmark_sha256": "702399abea66710355ee4ee107f1075f603b1127600821f2f3f676af1adafefb",
+  "checkpoints": {
+    "FNO": {
+      "path": "checkpoints/fno3d_t1_fno.pt",
+      "sha256": "eac085b49d6283ff5080748228b7d369ca7d54f7fe9ccb0fead06f2e9fde80db",
+      "epoch": 2440,
+      "model_config": {
+        "modes": [
+          8,
+          8,
+          8
+        ],
+        "hidden_channels": 16,
+        "num_layers": 4,
+        "projection_channels": 32,
+        "in_channels": 4,
+        "out_channels": 1,
+        "predict_residual": true
+      },
+      "training_config": {
+        "optimizer_steps": 3000,
+        "batch_size": 2,
+        "learning_rate": 0.001,
+        "minimum_learning_rate": 1e-05,
+        "weight_decay": 0.0,
+        "sampler": "bkw_nonbkw_paired",
+        "batch_seed_offset": 1701,
+        "final_initialization": "small_random_kaiming",
+        "final_random_scale": 0.01,
+        "final_random_seed_offset": 991,
+        "cfno_conservation_alpha": 9.0,
+        "conservation_scaling": "paper_moments_nondimensionalized_against_standardized_voxel_mse",
+        "gradient_clip": 1.0,
+        "validation_every_steps": 20,
+        "log_every_steps": 100,
+        "checkpoint_metric": "half_bkw_half_nonbkw_validation_endpoint_relative_l2",
+        "device": "cpu"
+      },
+      "validation_metrics": {
+        "loss": 0.02513150793965906,
+        "mse": 0.02513150793965906,
+        "mass": 1.8777792333274443e-06,
+        "momentum": 6.610882303399596e-07,
+        "energy": 7.140692700081207e-08,
+        "relative_l2": 0.005310408375225961,
+        "bkw_relative_l2": 0.0017689638189040124,
+        "non_bkw_relative_l2": 0.007671371412773927,
+        "selection_score": 0.004720167615838969,
+        "mass_drift": 0.0005486130714416504,
+        "momentum_drift": 0.0009695459681097418,
+        "energy_drift": 0.001723170280456543,
+        "negative_mass": 0.0009379900642670691
+      },
+      "embedded_training_provenance_available": false
+    },
+    "C-FNO": {
+      "path": "checkpoints/fno3d_t1_cfno.pt",
+      "sha256": "f67fd946e197062f601d2ca8ad68cd161c82ac82d014d94a88793f4a9d012b81",
+      "epoch": 2260,
+      "model_config": {
+        "modes": [
+          8,
+          8,
+          8
+        ],
+        "hidden_channels": 16,
+        "num_layers": 4,
+        "projection_channels": 32,
+        "in_channels": 4,
+        "out_channels": 1,
+        "predict_residual": true
+      },
+      "training_config": {
+        "optimizer_steps": 3000,
+        "batch_size": 2,
+        "learning_rate": 0.001,
+        "minimum_learning_rate": 1e-05,
+        "weight_decay": 0.0,
+        "sampler": "bkw_nonbkw_paired",
+        "batch_seed_offset": 1701,
+        "final_initialization": "small_random_kaiming",
+        "final_random_scale": 0.01,
+        "final_random_seed_offset": 991,
+        "cfno_conservation_alpha": 99.0,
+        "conservation_scaling": "paper_moments_nondimensionalized_against_standardized_voxel_mse",
+        "gradient_clip": 1.0,
+        "validation_every_steps": 20,
+        "log_every_steps": 100,
+        "checkpoint_metric": "half_bkw_half_nonbkw_validation_endpoint_relative_l2",
+        "device": "cpu"
+      },
+      "validation_metrics": {
+        "loss": 0.02443932008503346,
+        "mse": 0.02437472074525431,
+        "mass": 5.33478882944087e-07,
+        "momentum": 6.077637055684595e-08,
+        "energy": 5.826333012685593e-08,
+        "relative_l2": 0.005115109193138778,
+        "bkw_relative_l2": 0.0017792790313251317,
+        "non_bkw_relative_l2": 0.0073389959676812095,
+        "selection_score": 0.004559137499503171,
+        "mass_drift": 0.00028551816940307616,
+        "momentum_drift": 0.0002685690444195643,
+        "energy_drift": 0.0012968897819519043,
+        "negative_mass": 0.0018487492692656816
+      },
+      "embedded_training_provenance_available": false
+    }
+  },
+  "nearest_training_index_zero_based": 25,
+  "nearest_training_input_relative_L2": 0.011692823246395647,
+  "norms": "absolute full-volume midpoint-rule norms",
+  "rows": [
+    {
+      "method": "C-FNO",
+      "L1": 0.00855284290952057,
+      "L2": 0.0006780742855463126,
+      "Linf": 0.0002306094393134117,
+      "relative_L2": 0.004801810419860087,
+      "density_error": 2.9350399765815105e-05,
+      "bulk_velocity_error": 0.00021608588372189498,
+      "energy_error": 0.0005538604848125406,
+      "minimum": -1.4489074601442553e-05,
+      "negative_mass": 0.0008097669133045915
+    },
+    {
+      "method": "FNO",
+      "L1": 0.008203064348439778,
+      "L2": 0.0006966239119323588,
+      "Linf": 0.00023998133838176727,
+      "relative_L2": 0.004933170347767197,
+      "density_error": 0.001060180193415028,
+      "bulk_velocity_error": 0.00036494991663823606,
+      "energy_error": 0.0007411763957516637,
+      "minimum": -1.376344334858004e-05,
+      "negative_mass": 0.0005286354411340378
+    },
+    {
+      "method": "SM",
+      "L1": 0.006289077695631033,
+      "L2": 0.0006493037655492125,
+      "Linf": 0.00018569128587841988,
+      "relative_L2": 0.004598070821335771,
+      "density_error": 1.1939261801430234e-09,
+      "bulk_velocity_error": 1.251748641054197e-16,
+      "energy_error": 1.870402828352269e-05,
+      "minimum": -1.5378248008346418e-08,
+      "negative_mass": 3.323580861954577e-08
+    },
+    {
+      "method": "Identity",
+      "L1": 0.100282216123613,
+      "L2": 0.023324751788905588,
+      "Linf": 0.02310090744867921,
+      "relative_L2": 0.16517517116930602,
+      "density_error": 6.0097846699136426e-09,
+      "bulk_velocity_error": 7.081780200777148e-17,
+      "energy_error": 8.304839260731e-09,
+      "minimum": 6.283506780992809e-31,
+      "negative_mass": 0.0
+    }
+  ]
+}

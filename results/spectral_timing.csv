@@ -1,0 +1,2 @@
+N,Nrho,Nsph,Nsphpre,S,L,R,dt,time_horizon,precompute_performed,precompute_seconds,cache_name,cache_load_seconds,cache_megabytes,q_mean_seconds,q_std_seconds,rk4_step_mean_seconds,rk4_step_std_seconds,full_map_mean_seconds,full_map_std_seconds,warmup,repetitions
+32,32,32,32,2.5,5.51776695296637,5,0.1,1,0,NaN,F_N32_R5_L5.5178_Nrho32_Nsph32_Nsphpre32.mat,2.09149841666667,479.830344200134,0.455507611111111,0.00333275152795801,1.74904038888889,0.0221364780445277,17.5898202083333,0.252964943267326,1,3

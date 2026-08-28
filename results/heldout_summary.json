@@ -1,0 +1,847 @@
+{
+  "source": "six seed-separated external FSM trajectories generated after hyperparameters were frozen",
+  "created_utc": "2026-08-28T19:02:05.058892+00:00",
+  "external_seed": 2027,
+  "external_data_sha256": "c271a9a49945694ff430d7137d80725d332f903b6adf2b8fe8fe307b54faefb4",
+  "time_horizon": 1.0,
+  "dt": 0.1,
+  "device": "cpu",
+  "checkpoints": {
+    "FNO": {
+      "path": "checkpoints/fno3d_t1_fno.pt",
+      "sha256": "eac085b49d6283ff5080748228b7d369ca7d54f7fe9ccb0fead06f2e9fde80db",
+      "epoch": 2440,
+      "model_config": {
+        "modes": [
+          8,
+          8,
+          8
+        ],
+        "hidden_channels": 16,
+        "num_layers": 4,
+        "projection_channels": 32,
+        "in_channels": 4,
+        "out_channels": 1,
+        "predict_residual": true
+      },
+      "training_config": {
+        "optimizer_steps": 3000,
+        "batch_size": 2,
+        "learning_rate": 0.001,
+        "minimum_learning_rate": 1e-05,
+        "weight_decay": 0.0,
+        "sampler": "bkw_nonbkw_paired",
+        "batch_seed_offset": 1701,
+        "final_initialization": "small_random_kaiming",
+        "final_random_scale": 0.01,
+        "final_random_seed_offset": 991,
+        "cfno_conservation_alpha": 9.0,
+        "conservation_scaling": "paper_moments_nondimensionalized_against_standardized_voxel_mse",
+        "gradient_clip": 1.0,
+        "validation_every_steps": 20,
+        "log_every_steps": 100,
+        "checkpoint_metric": "half_bkw_half_nonbkw_validation_endpoint_relative_l2",
+        "device": "cpu"
+      },
+      "validation_metrics": {
+        "loss": 0.02513150793965906,
+        "mse": 0.02513150793965906,
+        "mass": 1.8777792333274443e-06,
+        "momentum": 6.610882303399596e-07,
+        "energy": 7.140692700081207e-08,
+        "relative_l2": 0.005310408375225961,
+        "bkw_relative_l2": 0.0017689638189040124,
+        "non_bkw_relative_l2": 0.007671371412773927,
+        "selection_score": 0.004720167615838969,
+        "mass_drift": 0.0005486130714416504,
+        "momentum_drift": 0.0009695459681097418,
+        "energy_drift": 0.001723170280456543,
+        "negative_mass": 0.0009379900642670691
+      },
+      "embedded_training_provenance_available": false
+    },
+    "C-FNO": {
+      "path": "checkpoints/fno3d_t1_cfno.pt",
+      "sha256": "f67fd946e197062f601d2ca8ad68cd161c82ac82d014d94a88793f4a9d012b81",
+      "epoch": 2260,
+      "model_config": {
+        "modes": [
+          8,
+          8,
+          8
+        ],
+        "hidden_channels": 16,
+        "num_layers": 4,
+        "projection_channels": 32,
+        "in_channels": 4,
+        "out_channels": 1,
+        "predict_residual": true
+      },
+      "training_config": {
+        "optimizer_steps": 3000,
+        "batch_size": 2,
+        "learning_rate": 0.001,
+        "minimum_learning_rate": 1e-05,
+        "weight_decay": 0.0,
+        "sampler": "bkw_nonbkw_paired",
+        "batch_seed_offset": 1701,
+        "final_initialization": "small_random_kaiming",
+        "final_random_scale": 0.01,
+        "final_random_seed_offset": 991,
+        "cfno_conservation_alpha": 99.0,
+        "conservation_scaling": "paper_moments_nondimensionalized_against_standardized_voxel_mse",
+        "gradient_clip": 1.0,
+        "validation_every_steps": 20,
+        "log_every_steps": 100,
+        "checkpoint_metric": "half_bkw_half_nonbkw_validation_endpoint_relative_l2",
+        "device": "cpu"
+      },
+      "validation_metrics": {
+        "loss": 0.02443932008503346,
+        "mse": 0.02437472074525431,
+        "mass": 5.33478882944087e-07,
+        "momentum": 6.077637055684595e-08,
+        "energy": 5.826333012685593e-08,
+        "relative_l2": 0.005115109193138778,
+        "bkw_relative_l2": 0.0017792790313251317,
+        "non_bkw_relative_l2": 0.0073389959676812095,
+        "selection_score": 0.004559137499503171,
+        "mass_drift": 0.00028551816940307616,
+        "momentum_drift": 0.0002685690444195643,
+        "energy_drift": 0.0012968897819519043,
+        "negative_mass": 0.0018487492692656816
+      },
+      "embedded_training_provenance_available": false
+    }
+  },
+  "nearest_training_inputs": [
+    {
+      "sample_index_zero_based": 0,
+      "family": 1,
+      "nearest_training_index_zero_based": 1,
+      "nearest_training_input_relative_L2": 0.5837066534302937
+    },
+    {
+      "sample_index_zero_based": 1,
+      "family": 1,
+      "nearest_training_index_zero_based": 11,
+      "nearest_training_input_relative_L2": 0.506022200406096
+    },
+    {
+      "sample_index_zero_based": 2,
+      "family": 2,
+      "nearest_training_index_zero_based": 24,
+      "nearest_training_input_relative_L2": 0.17748711315471596
+    },
+    {
+      "sample_index_zero_based": 3,
+      "family": 2,
+      "nearest_training_index_zero_based": 24,
+      "nearest_training_input_relative_L2": 0.1798738715081388
+    },
+    {
+      "sample_index_zero_based": 4,
+      "family": 3,
+      "nearest_training_index_zero_based": 39,
+      "nearest_training_input_relative_L2": 0.2980328571459318
+    },
+    {
+      "sample_index_zero_based": 5,
+      "family": 3,
+      "nearest_training_index_zero_based": 45,
+      "nearest_training_input_relative_L2": 0.27398835314658837
+    }
+  ],
+  "overall": {
+    "C-FNO": {
+      "count": 6,
+      "L1": {
+        "mean": 0.012865755910899593,
+        "max": 0.016919522542623466
+      },
+      "L2": {
+        "mean": 0.0016102917878493075,
+        "max": 0.002537164141703959
+      },
+      "Linf": {
+        "mean": 0.0013170403738816578,
+        "max": 0.002523660659790039
+      },
+      "relative_L2": {
+        "mean": 0.007697940745414658,
+        "max": 0.009999923315784795
+      },
+      "mass_drift": {
+        "mean": 0.0011958506968665443,
+        "max": 0.002493639081420751
+      },
+      "momentum_drift": {
+        "mean": 0.000416283007719449,
+        "max": 0.0006250762113958996
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.0003091613417442011,
+        "max": 0.0004662381859044758
+      },
+      "energy_drift": {
+        "mean": 0.006164756531024236,
+        "max": 0.011814860764189694
+      },
+      "minimum": {
+        "mean": -2.746763129835017e-05,
+        "min": -4.3161602661712095e-05
+      },
+      "negative_mass": {
+        "mean": 0.002550225760618338,
+        "max": 0.003029884161059386
+      }
+    },
+    "FNO": {
+      "count": 6,
+      "L1": {
+        "mean": 0.009989665052401958,
+        "max": 0.014829569955906965
+      },
+      "L2": {
+        "mean": 0.0016194842327122757,
+        "max": 0.002652583491188759
+      },
+      "Linf": {
+        "mean": 0.0012912284582853317,
+        "max": 0.0026675015687942505
+      },
+      "relative_L2": {
+        "mean": 0.0075000606797544665,
+        "max": 0.010697021996735055
+      },
+      "mass_drift": {
+        "mean": 0.002777872289226139,
+        "max": 0.005927028214811614
+      },
+      "momentum_drift": {
+        "mean": 0.0008093342359912055,
+        "max": 0.001368797860585763
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.0010100158730742643,
+        "max": 0.00256161819014516
+      },
+      "energy_drift": {
+        "mean": 0.007435832816761097,
+        "max": 0.013055441588128991
+      },
+      "minimum": {
+        "mean": -1.5918097081642674e-05,
+        "min": -4.1646697354735807e-05
+      },
+      "negative_mass": {
+        "mean": 0.0008958474826122045,
+        "max": 0.001691871456575972
+      }
+    },
+    "Identity": {
+      "count": 6,
+      "L1": {
+        "mean": 0.01543056799152443,
+        "max": 0.0338170459477897
+      },
+      "L2": {
+        "mean": 0.003194585484376032,
+        "max": 0.006834667009696217
+      },
+      "Linf": {
+        "mean": 0.0026663107176621756,
+        "max": 0.006069745868444443
+      },
+      "relative_L2": {
+        "mean": 0.01935439887385589,
+        "max": 0.04706948610513688
+      },
+      "mass_drift": {
+        "mean": 1.4802973661668753e-16,
+        "max": 2.220446049250313e-16
+      },
+      "momentum_drift": {
+        "mean": 6.691571780175254e-17,
+        "max": 1.1295700899707568e-16
+      },
+      "bulk_velocity_drift": {
+        "mean": 8.481017019317564e-17,
+        "max": 1.7772239894833365e-16
+      },
+      "energy_drift": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "minimum": {
+        "mean": 1.85100757501376e-26,
+        "min": 0.0
+      },
+      "negative_mass": {
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "Teacher": {
+      "count": 6,
+      "L1": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "Linf": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "relative_L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "mass_drift": {
+        "mean": 3.0232855478355227e-09,
+        "max": 8.823506703059536e-09
+      },
+      "momentum_drift": {
+        "mean": 4.0536602462832884e-07,
+        "max": 1.4678977814614446e-06
+      },
+      "bulk_velocity_drift": {
+        "mean": 4.051979607240961e-07,
+        "max": 1.467325256914206e-06
+      },
+      "energy_drift": {
+        "mean": 1.982361752596769e-05,
+        "max": 5.9411913069462585e-05
+      },
+      "minimum": {
+        "mean": -2.5589222474663113e-07,
+        "min": -1.386004441883415e-06
+      },
+      "negative_mass": {
+        "mean": 3.493981876056894e-06,
+        "max": 1.8796734855146526e-05
+      }
+    }
+  },
+  "by_family": {
+    "C-FNO/1": {
+      "count": 2,
+      "L1": {
+        "mean": 0.009912985751881332,
+        "max": 0.010169467253910781
+      },
+      "L2": {
+        "mean": 0.0010793697511911515,
+        "max": 0.0011992700300882395
+      },
+      "Linf": {
+        "mean": 0.0009692199528217316,
+        "max": 0.001130327582359314
+      },
+      "relative_L2": {
+        "mean": 0.003851494810471406,
+        "max": 0.0042637540786615745
+      },
+      "mass_drift": {
+        "mean": 0.0005408440838223783,
+        "max": 0.0007782526025752468
+      },
+      "momentum_drift": {
+        "mean": 0.0005178866094122843,
+        "max": 0.0005512869352168933
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.00031923149281615215,
+        "max": 0.000428836410106469
+      },
+      "energy_drift": {
+        "mean": 0.0016238885908050338,
+        "max": 0.0032452272102552193
+      },
+      "minimum": {
+        "mean": -3.287785057182191e-05,
+        "min": -4.3161602661712095e-05
+      },
+      "negative_mass": {
+        "mean": 0.0025653519188588176,
+        "max": 0.002902656970021996
+      }
+    },
+    "C-FNO/2": {
+      "count": 2,
+      "L1": {
+        "mean": 0.013366109120679252,
+        "max": 0.013448254192906631
+      },
+      "L2": {
+        "mean": 0.0014137542816987148,
+        "max": 0.0014297643010222833
+      },
+      "Linf": {
+        "mean": 0.001056034117937088,
+        "max": 0.0010697990655899048
+      },
+      "relative_L2": {
+        "mean": 0.00973418681060547,
+        "max": 0.009842285906467104
+      },
+      "mass_drift": {
+        "mean": 0.002491243814744748,
+        "max": 0.002493639081420751
+      },
+      "momentum_drift": {
+        "mean": 0.0003054299531616427,
+        "max": 0.0003055682789227718
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.0003046709416482624,
+        "max": 0.00030480819679124
+      },
+      "energy_drift": {
+        "mean": 0.011769932600305899,
+        "max": 0.011814860764189694
+      },
+      "minimum": {
+        "mean": -2.600094649096718e-05,
+        "min": -2.6006540792877786e-05
+      },
+      "negative_mass": {
+        "mean": 0.0030238520763767656,
+        "max": 0.003029884161059386
+      }
+    },
+    "C-FNO/3": {
+      "count": 2,
+      "L1": {
+        "mean": 0.015318172860138198,
+        "max": 0.016919522542623466
+      },
+      "L2": {
+        "mean": 0.0023377513306580564,
+        "max": 0.002537164141703959
+      },
+      "Linf": {
+        "mean": 0.0019258670508861542,
+        "max": 0.002523660659790039
+      },
+      "relative_L2": {
+        "mean": 0.009508140615167101,
+        "max": 0.009999923315784795
+      },
+      "mass_drift": {
+        "mean": 0.0005554641920325065,
+        "max": 0.0006175128130705421
+      },
+      "momentum_drift": {
+        "mean": 0.00042553246058442005,
+        "max": 0.0006250762113958996
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.00030358159076818885,
+        "max": 0.0004662381859044758
+      },
+      "energy_drift": {
+        "mean": 0.005100448401961777,
+        "max": 0.007810373539371529
+      },
+      "minimum": {
+        "mean": -2.352409683226142e-05,
+        "min": -2.530546407797374e-05
+      },
+      "negative_mass": {
+        "mean": 0.0020614732866194303,
+        "max": 0.0024890774054633353
+      }
+    },
+    "FNO/1": {
+      "count": 2,
+      "L1": {
+        "mean": 0.0071245373195940025,
+        "max": 0.00716161014757035
+      },
+      "L2": {
+        "mean": 0.0012149697516800567,
+        "max": 0.001320534978048509
+      },
+      "Linf": {
+        "mean": 0.0011888742446899414,
+        "max": 0.0013947337865829468
+      },
+      "relative_L2": {
+        "mean": 0.00435852071611987,
+        "max": 0.0049300454118390265
+      },
+      "mass_drift": {
+        "mean": 0.0005963679274149092,
+        "max": 0.0010068877396904874
+      },
+      "momentum_drift": {
+        "mean": 0.00092189300025927,
+        "max": 0.0011746467009689466
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.0011608409958324673,
+        "max": 0.0017394370507390845
+      },
+      "energy_drift": {
+        "mean": 0.003951784189447638,
+        "max": 0.004501455778038732
+      },
+      "minimum": {
+        "mean": -2.6593632355798036e-05,
+        "min": -4.1646697354735807e-05
+      },
+      "negative_mass": {
+        "mean": 0.001268050746701109,
+        "max": 0.001691871456575972
+      }
+    },
+    "FNO/2": {
+      "count": 2,
+      "L1": {
+        "mean": 0.009178078257495772,
+        "max": 0.009215001068038603
+      },
+      "L2": {
+        "mean": 0.0011734897214394993,
+        "max": 0.0011832314890778597
+      },
+      "Linf": {
+        "mean": 0.0006603356450796127,
+        "max": 0.0006746537983417511
+      },
+      "relative_L2": {
+        "mean": 0.008079887638759862,
+        "max": 0.00814519050497513
+      },
+      "mass_drift": {
+        "mean": 0.005902005751864836,
+        "max": 0.005927028214811614
+      },
+      "momentum_drift": {
+        "mean": 0.00046263652203550705,
+        "max": 0.0004639104496522894
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.0004599220887989885,
+        "max": 0.0004611999810247625
+      },
+      "energy_drift": {
+        "mean": 0.012988484376213028,
+        "max": 0.013055441588128991
+      },
+      "minimum": {
+        "mean": -9.342901648778934e-06,
+        "min": -9.356998816656414e-06
+      },
+      "negative_mass": {
+        "mean": 0.0004811557126521649,
+        "max": 0.0004812771925532573
+      }
+    },
+    "FNO/3": {
+      "count": 2,
+      "L1": {
+        "mean": 0.013666379580116097,
+        "max": 0.014829569955906965
+      },
+      "L2": {
+        "mean": 0.002469993225017271,
+        "max": 0.002652583491188759
+      },
+      "Linf": {
+        "mean": 0.002024475485086441,
+        "max": 0.0026675015687942505
+      },
+      "relative_L2": {
+        "mean": 0.010061773684383667,
+        "max": 0.010697021996735055
+      },
+      "mass_drift": {
+        "mean": 0.001835243188398672,
+        "max": 0.0022173243254217656
+      },
+      "momentum_drift": {
+        "mean": 0.0010434731856788393,
+        "max": 0.001368797860585763
+      },
+      "bulk_velocity_drift": {
+        "mean": 0.0014092845345913374,
+        "max": 0.00256161819014516
+      },
+      "energy_drift": {
+        "mean": 0.005367229884622626,
+        "max": 0.005813009377929834
+      },
+      "minimum": {
+        "mean": -1.1817757240351057e-05,
+        "min": -1.2093348232156131e-05
+      },
+      "negative_mass": {
+        "mean": 0.0009383359884833393,
+        "max": 0.001076831890749694
+      }
+    },
+    "Identity/1": {
+      "count": 2,
+      "L1": {
+        "mean": 5.904027598847927e-05,
+        "max": 0.00011731084029258012
+      },
+      "L2": {
+        "mean": 5.898845023233908e-06,
+        "max": 1.1738168086918138e-05
+      },
+      "Linf": {
+        "mean": 3.119930624961853e-06,
+        "max": 6.2212347984313965e-06
+      },
+      "relative_L2": {
+        "mean": 1.696346108066571e-05,
+        "max": 3.366241452963672e-05
+      },
+      "mass_drift": {
+        "mean": 2.220446049250313e-16,
+        "max": 2.220446049250313e-16
+      },
+      "momentum_drift": {
+        "mean": 9.573081596563222e-17,
+        "max": 1.1295700899707568e-16
+      },
+      "bulk_velocity_drift": {
+        "mean": 9.537206195993373e-17,
+        "max": 1.1102230246251565e-16
+      },
+      "energy_drift": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "minimum": {
+        "mean": 5.99617350494685e-38,
+        "min": 0.0
+      },
+      "negative_mass": {
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "Identity/2": {
+      "count": 2,
+      "L1": {
+        "mean": 0.03350591714335072,
+        "max": 0.0338170459477897
+      },
+      "L2": {
+        "mean": 0.006765935988870967,
+        "max": 0.006834667009696217
+      },
+      "Linf": {
+        "mean": 0.006004245951771736,
+        "max": 0.006069745868444443
+      },
+      "relative_L2": {
+        "mean": 0.04658602710777529,
+        "max": 0.04706948610513688
+      },
+      "mass_drift": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "momentum_drift": {
+        "mean": 3.283016208691307e-17,
+        "max": 3.9089306088615125e-17
+      },
+      "bulk_velocity_drift": {
+        "mean": 3.283016189366502e-17,
+        "max": 3.9089305745677217e-17
+      },
+      "energy_drift": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "minimum": {
+        "mean": 5.553022715295237e-26,
+        "min": 5.170975221855164e-26
+      },
+      "negative_mass": {
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "Identity/3": {
+      "count": 2,
+      "L1": {
+        "mean": 0.012726746555234087,
+        "max": 0.013666152764529947
+      },
+      "L2": {
+        "mean": 0.0028119216192338944,
+        "max": 0.003009899383018532
+      },
+      "Linf": {
+        "mean": 0.0019915662705898285,
+        "max": 0.0023190081119537354
+      },
+      "relative_L2": {
+        "mean": 0.011460206052711707,
+        "max": 0.012224087938611556
+      },
+      "mass_drift": {
+        "mean": 2.220446049250313e-16,
+        "max": 2.220446049250313e-16
+      },
+      "momentum_drift": {
+        "mean": 7.218617535271233e-17,
+        "max": 8.886119947416683e-17
+      },
+      "bulk_velocity_drift": {
+        "mean": 1.2622828672592819e-16,
+        "max": 1.7772239894833365e-16
+      },
+      "energy_drift": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "minimum": {
+        "mean": 9.740046319811402e-35,
+        "min": 0.0
+      },
+      "negative_mass": {
+        "mean": 0.0,
+        "max": 0.0
+      }
+    },
+    "Teacher/1": {
+      "count": 2,
+      "L1": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "Linf": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "relative_L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "mass_drift": {
+        "mean": 7.837989146608493e-10,
+        "max": 1.4889560695507953e-09
+      },
+      "momentum_drift": {
+        "mean": 7.693018560441335e-07,
+        "max": 1.4678977814614446e-06
+      },
+      "bulk_velocity_drift": {
+        "mean": 7.689979941783581e-07,
+        "max": 1.467325256914206e-06
+      },
+      "energy_drift": {
+        "mean": 1.1261765953118896e-07,
+        "max": 2.0913527376542618e-07
+      },
+      "minimum": {
+        "mean": -6.962405387778148e-07,
+        "min": -1.386004441883415e-06
+      },
+      "negative_mass": {
+        "mean": 9.425997974009345e-06,
+        "max": 1.8796734855146526e-05
+      }
+    },
+    "Teacher/2": {
+      "count": 2,
+      "L1": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "Linf": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "relative_L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "mass_drift": {
+        "mean": 6.445528555332203e-09,
+        "max": 8.823506703059536e-09
+      },
+      "momentum_drift": {
+        "mean": 9.095190013589053e-17,
+        "max": 1.5138487284997508e-16
+      },
+      "bulk_velocity_drift": {
+        "mean": 9.09519000436695e-17,
+        "max": 1.5138487262755574e-16
+      },
+      "energy_drift": {
+        "mean": 5.9023622170695234e-05,
+        "max": 5.9411913069462585e-05
+      },
+      "minimum": {
+        "mean": -9.704410736913367e-14,
+        "min": -9.977603595764939e-14
+      },
+      "negative_mass": {
+        "mean": 9.045203914414695e-14,
+        "max": 9.480431742249074e-14
+      }
+    },
+    "Teacher/3": {
+      "count": 2,
+      "L1": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "Linf": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "relative_L2": {
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "mass_drift": {
+        "mean": 1.8405291735135165e-09,
+        "max": 2.6325726043552322e-09
+      },
+      "momentum_drift": {
+        "mean": 4.467962177499011e-07,
+        "max": 8.246262614023348e-07
+      },
+      "bulk_velocity_drift": {
+        "mean": 4.4659588790297815e-07,
+        "max": 8.238980780873637e-07
+      },
+      "energy_drift": {
+        "mean": 3.346127476766547e-07,
+        "max": 6.476167215829776e-07
+      },
+      "minimum": {
+        "mean": -7.14360384179713e-08,
+        "min": -1.2156721140854643e-07
+      },
+      "negative_mass": {
+        "mean": 1.055947563709298e-06,
+        "max": 2.016937066208933e-06
+      }
+    }
+  }
+}

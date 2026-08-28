@@ -1,0 +1,15 @@
+{
+  "manifest_kind": "immutable_training_and_evaluation_data",
+  "created_utc": "2026-08-28T19:01:11.560640+00:00",
+  "sha256": {
+    "data/input_data_3V.mat": "3c42b84d9ab878928ffde15922e364094b9fe356e73589fea736a1b308dc2187",
+    "data/target_data_3V.mat": "885243cf2eb1e87bdb7f689f79fadcb600dce146f278d49729cf2f955000d58f",
+    "data/input_data_3V_baseline50.mat": "dd8dd9cd15fde7cf631e681e187fa2aec6a156bc83d40b2189cd360afb71f45b",
+    "data/target_data_3V_baseline50.mat": "8d533defcfe3290315795905013a504ceab3922f9e8ea74576d1858b5416c5a5",
+    "data/fixed_split_indices.json": "33f996cf2fce80cb90623f0a8ba6d05bafb68a0dfcb2785e4ec90efd9ffb6205",
+    "data/bkw_benchmark_3d.mat": "702399abea66710355ee4ee107f1075f603b1127600821f2f3f676af1adafefb",
+    "data/bkw_time_grid_3d.mat": "82fcf88e33d0ec801e8938d9a585a896aebac6726bda941500a2992d56965154",
+    "data/external_test_data_3V.mat": "c271a9a49945694ff430d7137d80725d332f903b6adf2b8fe8fe307b54faefb4",
+    "data/hybrid_bkw_metadata.mat": "c1f4d066848a2dbf9cdb03ba4af93e9a97054d9a268e5d373b305d010db94121"
+  }
+}

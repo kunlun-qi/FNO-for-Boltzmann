@@ -1,0 +1,20 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Generated fast-spectral weights are about 480 MB for the reported setup.
+matlab/fast_spectral/F_N*_Nrho*_Nsph*_Nsphpre*.mat
+
+# Interrupted training state and compiler/editor byproducts.
+checkpoints/resume_*.pt
+*.tmp
+*.log
+
+# Rebuilt report previews and temporary page renders.
+report/
+tmp/
+output/

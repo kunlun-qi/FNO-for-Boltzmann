@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-08-28T16:31:20Z",
+  "hardware": {
+    "cpu": "Apple M4",
+    "machine": "arm64",
+    "logical_cpu_cores_visible_to_matlab": 10,
+    "matlab": "R2025b Update 3",
+    "pytorch": "2.8.0"
+  },
+  "benchmark": {
+    "velocity_grid": "32^3",
+    "physical_time_initial": 5.5,
+    "physical_time_final": 6.5,
+    "dt": 0.1,
+    "rk4_steps": 10,
+    "spectral_resolution": {
+      "Nrho": 32,
+      "Nsph": 32,
+      "Nsphpre": 32
+    },
+    "neural_fourier_modes_per_axis": 8
+  },
+  "protocol": {
+    "primary_comparison_device": "Apple M4 CPU",
+    "spectral": "MATLAB double precision; resident precomputed weights; cache loading and precomputation excluded",
+    "neural": "PyTorch float32; batch size one; inference mode; host-tensor round trip; file I/O, axis conversion, and input normalization excluded",
+    "spectral_warmup": 1,
+    "spectral_repetitions": 3,
+    "neural_warmup": 20,
+    "neural_repetitions": 200
+  },
+  "online_cpu_seconds": {
+    "sm_one_rk4_step": {
+      "mean": 1.7490403888888888,
+      "standard_deviation": 0.022136478044527695
+    },
+    "sm_complete_map": {
+      "mean": 17.589820208333332,
+      "standard_deviation": 0.2529649432673262
+    },
+    "fno_complete_map": {
+      "mean": 0.014289650605000022,
+      "standard_deviation": 0.00032358375442807677
+    },
+    "cfno_complete_map": {
+      "mean": 0.014400358124999846,
+      "standard_deviation": 0.000370785835914335
+    }
+  },
+  "offline_training_seconds": {
+    "fno": 416.787592834,
+    "cfno": 417.28990908400004
+  },
+  "derived": {
+    "cpu_speedup_sm_over_fno": 1230.9482362135968,
+    "cpu_speedup_sm_over_cfno": 1221.484914170044,
+    "training_only_break_even_queries_fno": 23.714083137634198,
+    "training_only_break_even_queries_cfno": 23.742813124265343,
+    "data_generation_plus_training_break_even_queries_fno": 92.70874217369497,
+    "data_generation_plus_training_break_even_queries_cfno": 92.73790675748853
+  },
+  "one_time_spectral_cache": {
+    "load_seconds": 2.0914984166666666,
+    "size_megabytes": 479.8303442001343,
+    "included_in_online_time": false
+  },
+  "source_files": [
+    "results/spectral_timing.json",
+    "results/inference_timing.json",
+    "results/training_summary.json"
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "seed": 2026,
+  "experiment": {
+    "name": "boltzmann3d_fno_cfno_reference",
+    "purpose": "Self-contained open-source reference for 3D Maxwell-molecule Boltzmann data generation, FNO/C-FNO training, BKW evaluation, and timing",
+    "evaluation_role": "The exact BKW map from physical time 5.5 to 6.5 is evaluation-only",
+    "immutable_manifest": "data/immutable_sha256.json"
+  },
+  "data": {
+    "input_file": "data/input_data_3V.mat",
+    "target_file": "data/target_data_3V.mat",
+    "baseline_generation_seconds": 885.4,
+    "hybrid_replacement_generation_seconds": 327.21773820833334,
+    "generation_seconds": 1212.6177382083333,
+    "family_counts": [
+      16,
+      17,
+      17
+    ],
+    "split_indices_file": "data/fixed_split_indices.json",
+    "split_counts": {
+      "train": [
+        13,
+        13,
+        14
+      ],
+      "validation": [
+        1,
+        2,
+        2
+      ],
+      "test": [
+        2,
+        2,
+        1
+      ]
+    }
+  },
+  "velocity": {
+    "N": 32,
+    "S": 2.5,
+    "L": 5.517766952966369,
+    "dv": 0.34486043456039805
+  },
+  "reference_solver": {
+    "time_horizon": 1.0,
+    "dt": 0.1,
+    "Nrho": 32,
+    "Nsph": 32,
+    "Nsphpre": 32,
+    "kernel": "cutoff Maxwell molecules, B=1/(4*pi)"
+  },
+  "model": {
+    "modes": [
+      8,
+      8,
+      8
+    ],
+    "hidden_channels": 16,
+    "num_layers": 4,
+    "projection_channels": 32,
+    "in_channels": 4,
+    "out_channels": 1,
+    "predict_residual": true
+  },
+  "training": {
+    "optimizer_steps": 3000,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "minimum_learning_rate": 1e-05,
+    "weight_decay": 0.0,
+    "sampler": "bkw_nonbkw_paired",
+    "batch_seed_offset": 1701,
+    "final_initialization": "small_random_kaiming",
+    "final_random_scale": 0.01,
+    "final_random_seed_offset": 991,
+    "cfno_conservation_alpha": 99.0,
+    "conservation_scaling": "paper_moments_nondimensionalized_against_standardized_voxel_mse",
+    "gradient_clip": 1.0,
+    "validation_every_steps": 20,
+    "log_every_steps": 100,
+    "checkpoint_metric": "half_bkw_half_nonbkw_validation_endpoint_relative_l2",
+    "device": "cpu"
+  },
+  "success_gates": {
+    "benchmark_relative_L2_max": 0.033035034233861206,
+    "external_relative_L2_max": 0.01935439887385589,
+    "cfno_accuracy_degradation_fraction_max": 0.1,
+    "cfno_requires_lower_mass_momentum_energy_drift": true
+  },
+  "bkw_benchmark": {
+    "physical_time_initial": 5.5,
+    "time_horizon": 1.0,
+    "physical_time_grid": [
+      5.5,
+      5.6,
+      5.8,
+      6.0,
+      6.5,
+      7.0
+    ],
+    "time_convention": "K(t)=1-exp(-t/6)"
+  },
+  "hybrid_bkw": {
+    "exact_time_starts": [
+      5.52,
+      5.58,
+      5.64,
+      5.7,
+      5.76,
+      5.82,
+      5.88,
+      5.94,
+      6.0
+    ],
+    "perturbation_nominal_time": 5.5,
+    "perturbation_epsilons": [
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.085,
+      0.1
+    ],
+    "perturbation_seed": 2026,
+    "paper_time_positivity_threshold": 5.49774439124493
+  },
+  "external_test": {
+    "seed": 2027,
+    "samples_per_family": 2
+  },
+  "timing": {
+    "resolutions": [
+      32
+    ],
+    "neural_warmup": 20,
+    "neural_repetitions": 200,
+    "spectral_warmup": 1,
+    "spectral_repetitions": 3
+  }
+}

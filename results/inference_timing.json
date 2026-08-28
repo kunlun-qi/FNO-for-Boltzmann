@@ -1,0 +1,167 @@
+{
+  "protocol": {
+    "task": "one complete BKW endpoint evaluation from physical time 5.5 to 6.5",
+    "neural": "batch one; inference mode; synchronized repetitions; float32; host-tensor round trip includes transfer, model, physical residual reconstruction, and output transfer, but excludes file I/O, MATLAB-axis conversion, and input normalization",
+    "spectral": "MATLAB CPU double RK4 with 10 steps; resident precomputed weights",
+    "offline_training_excluded": true
+  },
+  "hardware": {
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "processor": "arm",
+    "cpu_brand": "Apple M4",
+    "machine": "arm64",
+    "torch": "2.8.0",
+    "mps_available": true
+  },
+  "neural": [
+    {
+      "method": "FNO",
+      "device": "mps",
+      "N": 32,
+      "precision": "float32",
+      "batch_size": 1,
+      "warmup": 20,
+      "repetitions": 200,
+      "checkpoint_epoch": 2440,
+      "checkpoint_sha256": "eac085b49d6283ff5080748228b7d369ca7d54f7fe9ccb0fead06f2e9fde80db",
+      "resident": {
+        "mean_seconds": 0.004440021054999993,
+        "std_seconds": 0.0014038374033725248,
+        "median_seconds": 0.0038336454999999825,
+        "minimum_seconds": 0.0036631249999998783
+      },
+      "host_tensor_round_trip": {
+        "mean_seconds": 0.004706814389999985,
+        "std_seconds": 0.0012952052275326464,
+        "median_seconds": 0.004163833500000047,
+        "minimum_seconds": 0.004008958000000007
+      }
+    },
+    {
+      "method": "C-FNO",
+      "device": "mps",
+      "N": 32,
+      "precision": "float32",
+      "batch_size": 1,
+      "warmup": 20,
+      "repetitions": 200,
+      "checkpoint_epoch": 2260,
+      "checkpoint_sha256": "f67fd946e197062f601d2ca8ad68cd161c82ac82d014d94a88793f4a9d012b81",
+      "resident": {
+        "mean_seconds": 0.004314169775000026,
+        "std_seconds": 0.0013063489669262664,
+        "median_seconds": 0.003809229000000469,
+        "minimum_seconds": 0.003603583000000299
+      },
+      "host_tensor_round_trip": {
+        "mean_seconds": 0.005549660404999997,
+        "std_seconds": 0.0027329488714195735,
+        "median_seconds": 0.004310875500000311,
+        "minimum_seconds": 0.004006249999999767
+      }
+    },
+    {
+      "method": "FNO",
+      "device": "cpu",
+      "N": 32,
+      "precision": "float32",
+      "batch_size": 1,
+      "warmup": 20,
+      "repetitions": 200,
+      "checkpoint_epoch": 2440,
+      "checkpoint_sha256": "eac085b49d6283ff5080748228b7d369ca7d54f7fe9ccb0fead06f2e9fde80db",
+      "resident": {
+        "mean_seconds": 0.014370302264999952,
+        "std_seconds": 0.0003692505404366234,
+        "median_seconds": 0.014295832999999813,
+        "minimum_seconds": 0.013600624999999589
+      },
+      "host_tensor_round_trip": {
+        "mean_seconds": 0.014289650605000022,
+        "std_seconds": 0.00032358375442807677,
+        "median_seconds": 0.014267395999999266,
+        "minimum_seconds": 0.013442957999998839
+      }
+    },
+    {
+      "method": "C-FNO",
+      "device": "cpu",
+      "N": 32,
+      "precision": "float32",
+      "batch_size": 1,
+      "warmup": 20,
+      "repetitions": 200,
+      "checkpoint_epoch": 2260,
+      "checkpoint_sha256": "f67fd946e197062f601d2ca8ad68cd161c82ac82d014d94a88793f4a9d012b81",
+      "resident": {
+        "mean_seconds": 0.01462312983000002,
+        "std_seconds": 0.0005569871496745108,
+        "median_seconds": 0.014488312000000114,
+        "minimum_seconds": 0.013596292000000787
+      },
+      "host_tensor_round_trip": {
+        "mean_seconds": 0.014400358124999846,
+        "std_seconds": 0.000370785835914335,
+        "median_seconds": 0.014325395500000226,
+        "minimum_seconds": 0.013568499999998096
+      }
+    }
+  ],
+  "spectral": {
+    "protocol": "Complete f(0) to f(1) map; precomputation and cache loading excluded from online time",
+    "matlab_version": "25.2.0.3123386 (R2025b) Update 3",
+    "precision": "double",
+    "integrator": "RK4",
+    "kernel": "cutoff Maxwell molecules, B=1/(4*pi)",
+    "dt": 0.1,
+    "time_horizon": 1,
+    "physical_time_initial": 5.5,
+    "physical_time_final": 6.5,
+    "input_source": "data/bkw_benchmark_3d.mat (frozen exact BKW input)",
+    "computer_architecture": "maca64",
+    "logical_cpu_cores_visible_to_matlab": 10,
+    "generated_utc": "2026-08-28T16:28:36Z",
+    "rows": {
+      "N": 32,
+      "Nrho": 32,
+      "Nsph": 32,
+      "Nsphpre": 32,
+      "S": 2.5,
+      "L": 5.517766952966369,
+      "R": 5,
+      "dt": 0.1,
+      "time_horizon": 1,
+      "precompute_performed": false,
+      "precompute_seconds": null,
+      "cache_name": "F_N32_R5_L5.5178_Nrho32_Nsph32_Nsphpre32.mat",
+      "cache_load_seconds": 2.0914984166666666,
+      "cache_megabytes": 479.8303442001343,
+      "q_mean_seconds": 0.4555076111111111,
+      "q_std_seconds": 0.003332751527958011,
+      "rk4_step_mean_seconds": 1.7490403888888888,
+      "rk4_step_std_seconds": 0.022136478044527695,
+      "full_map_mean_seconds": 17.589820208333332,
+      "full_map_std_seconds": 0.2529649432673262,
+      "warmup": 1,
+      "repetitions": 3
+    }
+  },
+  "online_speedup_sm_over_accelerated_host_tensor_round_trip": {
+    "FNO": 3737.0966328530726,
+    "C-FNO": 3169.5309126456978
+  },
+  "online_speedup_sm_over_host_tensor_round_trip_by_device": {
+    "mps": {
+      "FNO": 3737.0966328530726,
+      "C-FNO": 3169.5309126456978
+    },
+    "cpu": {
+      "FNO": 1230.9482362135968,
+      "C-FNO": 1221.484914170044
+    }
+  },
+  "estimated_break_even_queries_including_data_and_training": {
+    "FNO": 92.6582214478943,
+    "C-FNO": 92.69122895088523
+  }
+}

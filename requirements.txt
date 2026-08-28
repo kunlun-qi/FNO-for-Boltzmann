@@ -1,0 +1,6 @@
+numpy==2.0.2
+h5py==3.14.0
+matplotlib==3.9.4
+scipy==1.13.1
+torch==2.8.0
+reportlab==4.4.9
