@@ -11,7 +11,7 @@ Maxwell molecules, collision kernel `B = 1/(4*pi)`.  It contains:
 - CPU and MPS inference timings and CPU fast-spectral timings;
 - figures, machine-readable result tables, tests, and a PDF-report builder.
 
-No LaTeX source is included.  The optional report is generated directly with
+The optional report is generated directly with
 Python and is intentionally not tracked in this repository.
 
 ## Main numerical result
@@ -46,9 +46,6 @@ figures/           BKW profiles, plane errors, and training history
 scripts/           Data-manifest and PDF-report utilities
 tests/             Fast regression tests
 ```
-
-The generated 480 MB fast-spectral weight cache is deliberately excluded from
-the package and from Git.  MATLAB creates it automatically on first use.
 
 ## Python setup
 
